@@ -1,0 +1,711 @@
+/* SF Pro Text */
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('./fonts/SF-Pro-Text-Light.otf') format('opentype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('./fonts/SF-Pro-Text-Regular.otf') format('opentype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('./fonts/SF-Pro-Text-Medium.otf') format('opentype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('./fonts/SF-Pro-Text-Semibold.otf') format('opentype');
+  font-weight: 600; /* Semi-Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('./fonts/SF-Pro-Text-Bold.otf') format('opentype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+/* SF Pro Display */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Light.otf') format('opentype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+  font-weight: 600; /* Semi-Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+/* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'SF Pro Display', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #212121;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo */
+.logo a {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #666;
+}
+
+/* Center Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: rgba(0, 0, 0, 1);
+  transform: translateY(-4px); /* Subtle hover effect */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Hamburger Menu Animation */
+#menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Design: Menu Toggle */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  #menu-toggle.open + .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+@keyframes smoothWave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* Case Studies Section */
+.case-studies {
+  padding: 80px 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 80%;
+}
+
+/* Case Card Styles */
+.case-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.3s ease;
+}
+
+/* Image Styling */
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Hover Effect - Zoom and Dull */
+.case-card:hover .card-image img {
+  transform: scale(1.1); /* Zoom-in image */
+}
+
+.case-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+}
+
+/* Title Animation - Slide from Bottom */
+.card-title {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px); /* Start below the image */
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0; /* Start with opacity 0 */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Hover Effect for Title */
+.case-card:hover .card-title {
+  opacity: 1; /* Make the title visible */
+  transform: translateX(-50%) translateY(0); /* Slide up to the center */
+}
+
+/* Dulling the Background on Hover */
+.case-card:hover .card-image {
+  filter: brightness(0.4); /* Darken the image behind the text */
+}
+
+/* Frosted Glass Overlay */
+.case-card:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: -1; /* Behind the content */
+}
+
+/* Card Animation */
+.case-card {
+  transition: transform 0.3s ease, box-shadow 0.5s ease-in-out;
+}
+
+.case-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* Frosted Glass Effect */
+.card:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.4); /* Semi-transparent */
+  backdrop-filter: blur(15px); /* Apply blur */
+  z-index: -1; /* Behind the content */
+}
+
+.case-studies {
+  overflow-x: auto; 
+  padding: 20px 0;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: nowrap; /* No wrapping */
+  gap: 0; /* No gap between cards */
+}
+
+.case-card {
+  flex: 0 0 calc(100vw / 4); /* 4 cards visible at a time */
+  height: calc(100vw / 4); /* Make it square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.case-card:hover {
+  transform: scale(1.05);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 
+.infinite-scroll-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;  
+  justify-content: center; 
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.scroll-container {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  width: max-content; 
+  animation: scroll-horizontal 30s linear infinite;
+}
+
+.scroll-content {
+  flex: 0 0 auto;
+  font-size: 6vw; 
+  font-weight: 900;
+  color: black; 
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.8;
+  padding: 0 2vw; 
+
+@keyframes scroll-horizontal {
+  from {
+    transform: translateX(100vw); 
+  }
+  to {
+    transform: translateX(-100%); 
+  }
+}
+
+.scroll-content:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+*/
+.hero-section {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2; /* Hero section on top of waves */
+  font-family: 'SF Pro', sans-serif;
+}
+
+.hero-text {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+  animation: smoothWave 1.5s ease-in-out infinite;
+}
+
+.hero-text span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.hero-text span:hover {
+  transform: translateY(-10px);
+}
+
+.hero-text span:nth-child(1) {
+  animation: none;
+}
+
+.hero-text span:nth-child(2) {
+  animation: none;
+}
+
+.hero-text span:nth-child(3) {
+  animation: none;
+}
+
+/* Waves Section */
+.container {
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Waves behind hero section */
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center; /* Align the bars in the center */
+  z-index: 1; /* Ensure it's behind hero text */
+}
+
+.wave:nth-child(1) .bar {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 0px;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.wave:nth-child(n + 2) .bar {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  -webkit-animation: barHeight 2.9s infinite ease-in-out alternate,
+                     barSkew 2.9s infinite ease-in-out alternate;
+  animation: barHeight 2.9s infinite ease-in-out alternate,
+             barSkew 2.9s infinite ease-in-out alternate;
+}
+.wave .bar:nth-child(1) {
+  -webkit-animation-delay: calc(var(--f) * 0), calc(var(--f) * 0 - 1.95s);
+  animation-delay: calc(var(--f) * 0), calc(var(--f) * 0 - 1.95s);
+}
+.wave .bar:nth-child(2) {
+  -webkit-animation-delay: calc(var(--f) * 1), calc(var(--f) * 1 - 1.95s);
+  animation-delay: calc(var(--f) * 1), calc(var(--f) * 1 - 1.95s);
+}
+.wave .bar:nth-child(3) {
+  -webkit-animation-delay: calc(var(--f) * 2), calc(var(--f) * 2 - 1.95s);
+  animation-delay: calc(var(--f) * 2), calc(var(--f) * 2 - 1.95s);
+}
+.wave .bar:nth-child(4) {
+  -webkit-animation-delay: calc(var(--f) * 3), calc(var(--f) * 3 - 1.95s);
+  animation-delay: calc(var(--f) * 3), calc(var(--f) * 3 - 1.95s);
+}
+.wave .bar:nth-child(5) {
+  -webkit-animation-delay: calc(var(--f) * 4), calc(var(--f) * 4 - 1.95s);
+  animation-delay: calc(var(--f) * 4), calc(var(--f) * 4 - 1.95s);
+}
+.wave .bar:nth-child(6) {
+  -webkit-animation-delay: calc(var(--f) * 5), calc(var(--f) * 5 - 1.95s);
+  animation-delay: calc(var(--f) * 5), calc(var(--f) * 5 - 1.95s);
+}
+.wave .bar:nth-child(7) {
+  -webkit-animation-delay: calc(var(--f) * 6), calc(var(--f) * 6 - 1.95s);
+  animation-delay: calc(var(--f) * 6), calc(var(--f) * 6 - 1.95s);
+}
+.wave .bar:nth-child(8) {
+  -webkit-animation-delay: calc(var(--f) * 7), calc(var(--f) * 7 - 1.95s);
+  animation-delay: calc(var(--f) * 7), calc(var(--f) * 7 - 1.95s);
+}
+.wave .bar:nth-child(9) {
+  -webkit-animation-delay: calc(var(--f) * 8), calc(var(--f) * 8 - 1.95s);
+  animation-delay: calc(var(--f) * 8), calc(var(--f) * 8 - 1.95s);
+}
+.wave .bar:nth-child(10) {
+  -webkit-animation-delay: calc(var(--f) * 9), calc(var(--f) * 9 - 1.95s);
+  animation-delay: calc(var(--f) * 9), calc(var(--f) * 9 - 1.95s);
+}
+.wave .bar:nth-child(11) {
+  -webkit-animation-delay: calc(var(--f) * 10), calc(var(--f) * 10 - 1.95s);
+  animation-delay: calc(var(--f) * 10), calc(var(--f) * 10 - 1.95s);
+}
+.wave .bar:nth-child(12) {
+  -webkit-animation-delay: calc(var(--f) * 11), calc(var(--f) * 11 - 1.95s);
+  animation-delay: calc(var(--f) * 11), calc(var(--f) * 11 - 1.95s);
+}
+.wave .bar:nth-child(13) {
+  -webkit-animation-delay: calc(var(--f) * 12), calc(var(--f) * 12 - 1.95s);
+  animation-delay: calc(var(--f) * 12), calc(var(--f) * 12 - 1.95s);
+}
+.wave .bar:nth-child(14) {
+  -webkit-animation-delay: calc(var(--f) * 13), calc(var(--f) * 13 - 1.95s);
+  animation-delay: calc(var(--f) * 13), calc(var(--f) * 13 - 1.95s);
+}
+.wave .bar:nth-child(15) {
+  -webkit-animation-delay: calc(var(--f) * 14), calc(var(--f) * 14 - 1.95s);
+  animation-delay: calc(var(--f) * 14), calc(var(--f) * 14 - 1.95s);
+}
+.wave .bar:nth-child(16) {
+  -webkit-animation-delay: calc(var(--f) * 15), calc(var(--f) * 15 - 1.95s);
+  animation-delay: calc(var(--f) * 15), calc(var(--f) * 15 - 1.95s);
+}
+.wave .bar:nth-child(17) {
+  -webkit-animation-delay: calc(var(--f) * 16), calc(var(--f) * 16 - 1.95s);
+  animation-delay: calc(var(--f) * 16), calc(var(--f) * 16 - 1.95s);
+}
+.wave .bar:nth-child(18) {
+  -webkit-animation-delay: calc(var(--f) * 17), calc(var(--f) * 17 - 1.95s);
+  animation-delay: calc(var(--f) * 17), calc(var(--f) * 17 - 1.95s);
+}
+.wave .bar:nth-child(19) {
+  -webkit-animation-delay: calc(var(--f) * 18), calc(var(--f) * 18 - 1.95s);
+  animation-delay: calc(var(--f) * 18), calc(var(--f) * 18 - 1.95s);
+}
+.wave .bar:nth-child(20) {
+  -webkit-animation-delay: calc(var(--f) * 19), calc(var(--f) * 19 - 1.95s);
+  animation-delay: calc(var(--f) * 19), calc(var(--f) * 19 - 1.95s);
+}
+.wave .bar:nth-child(21) {
+  -webkit-animation-delay: calc(var(--f) * 20), calc(var(--f) * 20 - 1.95s);
+  animation-delay: calc(var(--f) * 20), calc(var(--f) * 20 - 1.95s);
+}
+.wave .bar:nth-child(22) {
+  -webkit-animation-delay: calc(var(--f) * 21), calc(var(--f) * 21 - 1.95s);
+  animation-delay: calc(var(--f) * 21), calc(var(--f) * 21 - 1.95s);
+}
+.wave .bar:nth-child(23) {
+  -webkit-animation-delay: calc(var(--f) * 22), calc(var(--f) * 22 - 1.95s);
+  animation-delay: calc(var(--f) * 22), calc(var(--f) * 22 - 1.95s);
+}
+.wave .bar:nth-child(24) {
+  -webkit-animation-delay: calc(var(--f) * 23), calc(var(--f) * 23 - 1.95s);
+  animation-delay: calc(var(--f) * 23), calc(var(--f) * 23 - 1.95s);
+}
+.wave[data-level="1"] .bar {
+  width: 11px;
+  background-color: #fff;
+  --f: -0.24375s;
+  --h: 40px;
+}
+.wave[data-level="2"] .bar {
+  width: 8px;
+  background-color: #eee;
+  --f: -0.4875s;
+  --h: 100px;
+}
+.wave[data-level="3"] .bar {
+  width: 5px;
+  background-color: #ddd;
+  --f: -0.325s;
+  --h: 120px;
+}
+/* Keyframes for wave animations (same as before) */
+
+@-webkit-keyframes barHeight {
+  from {
+    height: var(--h);
+  }
+  to {
+    height: calc(var(--h) + 100px);
+  }
+}
+
+@keyframes barHeight {
+  from {
+    height: var(--h);
+  }
+  to {
+    height: calc(var(--h) + 100px);
+  }
+}
+
+@-webkit-keyframes barSkew {
+  from {
+    transform: skewY(30deg);
+  }
+  to {
+    transform: skewY(-30deg);
+  }
+}
+
+@keyframes barSkew {
+  from {
+    transform: skewY(30deg);
+  }
+  to {
+    transform: skewY(-30deg);
+  }
+}
+
+
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.resume button {
+  position: absolute;
+  top: 60%;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #fefefe;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: #212121;
+  font-family: 'SF Pro Display', sans-serif;
+}
+
+.resume a {
+ 
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+.resume a::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  transform: scaleY(1);
+}
+
+.resume a:hover::before {
+  transform: scaleY(0);
+}
+
+.resume a::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: -2px;
+  height: calc(100% + 4px);
+  width: calc(100% - 12px);
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  transform: scaleX(1);
+  transition-delay: 0.3s;
+}
+
+.resume a:hover::after {
+  transform: scaleX(0);
+}
+
+.resume a span {
+  position: relative;
+  z-index: 3;
+}
+
+.resume button {
+  background-color: none;
+  text-decoration: none;
+  background-color: #212121;
+  border: none;
+}
