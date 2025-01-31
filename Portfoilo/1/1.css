@@ -399,21 +399,21 @@ nav .close:hover div::after {
 
 .wave[data-level="1"] .bar {
   width: 1px;
-  background-color: #000000;
+  background-color: #ffff;
   --f: -0.24375s;
   --h: 40px;
 }
 
 .wave[data-level="2"] .bar {
   width: 8px;
-  background-color: #000000;
+  background-color: #eee;
   --f: -0.4875s;
   --h: 100px;
 }
 
 .wave[data-level="3"] .bar {
   width: 0.3px;
-  background-color: #050505;
+  background-color: #ddd;
   --f: -0.325s;
   --h: 120px;
 }
@@ -475,6 +475,7 @@ nav .close:hover div::after {
   font-size: 4rem;
   font-weight: 700;
   color: var(--hero-text);
+  color: #fff;
   display: inline-block;
   animation: smoothWave 0.8s ease-in infinite;
 }
@@ -553,7 +554,6 @@ nav .close:hover div::after {
 
 .resume-button a span {
   position: relative;
-  z-index: 3;
 }
 
 .resume-button button {

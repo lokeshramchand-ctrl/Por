@@ -1,4 +1,3 @@
-// ------- Osmo [https://osmo.supply/] ------- //
 
 gsap.registerPlugin(CustomEase, Flip)
 CustomEase.create("osmo-ease", "0.625, 0.05, 0, 1")

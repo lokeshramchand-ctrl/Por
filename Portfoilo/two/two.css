@@ -71,9 +71,7 @@
 }
 
 
-
-
-body {
+  body {
     background-color: var(--color-neutral-900);
     color: var(--color-light);
     font-size: var(--size-font);
@@ -254,7 +252,7 @@ body {
   }
   
   .overlay-title__wrap .main-title{
-      position: absolute;
+    position: absolute;
     font-size: 9em;
   }
   
