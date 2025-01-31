@@ -127,6 +127,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
   <script src="two.js"></script>
+  <script>
+    // Infinite scroll
+  window.addEventListener('scroll', function() {
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+        // User has scrolled to the bottom, load two.html
+        loadNextPage();
+    }
+});
+
+function loadNextPage() {
+    window.location.href = "three/three.html";  // Redirect to two.html when the user reaches the bottom
+}
+</script>
   
 </body>
 </html>
