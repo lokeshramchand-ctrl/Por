@@ -1,5 +1,5 @@
-const open = document.querySelector('.container');
-		const close = document.querySelector('.close');
+const open = document.querySelector('.hamburger input');
+		const close = document.querySelector('nav .close');
 		var tl = gsap.timeline({ defaults: { duration: 1, ease: 'expo.inOut' } });
 		open.addEventListener('click', () => {
 			if (tl.reversed()) {
