@@ -179,7 +179,7 @@ body {
   }
   
   .main-title::after{
-      position: absolute;
+    position: absolute;
     content: '';
     top: 50%;
     right: -.3em;

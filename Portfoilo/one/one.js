@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const scrollContainer = document.querySelector(".case-studies");
+  const scrollContainer = document.querySelector(".hero-text");
   let isDown = false;
   let startX;
   let scrollLeft;
@@ -69,5 +69,46 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollContainer.addEventListener("wheel", (e) => {
     scrollContainer.scrollLeft += e.deltaY * 3; // Smooth scroll effect
     e.preventDefault(); // Prevent default vertical scroll
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollContainer = document.querySelector(".hero-section");
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // Mouse Drag Scrolling
+  scrollContainer.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - scrollContainer.offsetLeft;
+    scrollLeft = scrollContainer.scrollLeft;
+  });
+
+  scrollContainer.addEventListener("mouseleave", () => isDown = false);
+  scrollContainer.addEventListener("mouseup", () => isDown = false);
+
+  scrollContainer.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainer.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust speed factor
+    scrollContainer.scrollLeft = scrollLeft - walk;
+  });
+
+  // Scroll Wheel -> Convert Vertical Scroll to Horizontal
+  scrollContainer.addEventListener("wheel", (e) => {
+    scrollContainer.scrollLeft += e.deltaY * 3; // Smooth scroll effect
+    e.preventDefault(); // Prevent default vertical scroll
+  });
+
+  // Add scroll event for navigating to different pages
+  window.addEventListener('wheel', (e) => {
+    if (e.deltaY > 0) {
+      // Scroll down: navigate to next page
+      window.location.href = "two.html"; // Replace with your next page URL
+    } else if (e.deltaY < 0) {
+      // Scroll up: navigate to previous page
+      window.location.href = "one.html"; // Replace with your previous page URL
+    }
   });
 });

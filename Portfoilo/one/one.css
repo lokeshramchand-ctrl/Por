@@ -76,9 +76,123 @@ html, body {
   padding: 0;
   font-family: 'SF Pro Display', sans-serif;
   scroll-behavior: smooth;
-  overflow-x: hidden;
   background-color: #212121;
+  height: 100%;
+  overflow-y: auto;
 }
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo */
+.logo a {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #666;
+}
+
+/* Center Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: rgba(0, 0, 0, 1);
+  transform: translateY(-4px); /* Subtle hover effect */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Hamburger Menu Animation */
+#menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Design: Menu Toggle */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  #menu-toggle.open + .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+@keyframes smoothWave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
 
 .hero-section {
   position: absolute;
