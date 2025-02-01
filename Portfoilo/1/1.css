@@ -500,7 +500,6 @@ nav .close:hover div::after {
     transform: translateY(-10px);
   }
 }
-
 .resume-button {
   position: absolute;
   bottom: 40%;
